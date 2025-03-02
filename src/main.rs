@@ -57,6 +57,8 @@ async fn main() -> Result<(), Box<dyn Error>> {
         let mut stdout_content = Vec::new();
 
         while let Some(line) = reader.next_line().await.expect("Failed to read line") {
+            // Print to stdout immediately
+            println!("{}", line);
             stdout_content.push(line);
         }
 
